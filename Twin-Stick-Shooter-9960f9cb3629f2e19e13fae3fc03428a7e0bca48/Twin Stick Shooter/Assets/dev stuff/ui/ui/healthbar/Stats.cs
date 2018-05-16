@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 [Serializable]
-public class Stats : MonoBehaviour
+public class Stats
+
 {
     [SerializeField]
     private Healthbar bar;
@@ -41,7 +42,7 @@ public class Stats : MonoBehaviour
         {
 
             maxhealth = value;
-            bar.MaxValue = value;
+            bar.Value = value;
         }
     }
     public void initialize()
@@ -49,5 +50,4 @@ public class Stats : MonoBehaviour
         this.MaxValue = maxhealth;
         this.CurrentHealth = currentHealth;
     }
-
 }
