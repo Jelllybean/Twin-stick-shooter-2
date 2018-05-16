@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-[Serializable]
-public class Stats
 
+[Serializable]
+public class HealthStat
 {
+
     [SerializeField]
-    private Healthbar bar;
+    private HealthBar bar;
 
     [SerializeField]
     private float maxhealth;
 
     [SerializeField]
-    private float currentHealth;
+    public float currentHealth;
 
     // dit is de huidige value van de healthbar die de speler op dat moment heeft 
     public float CurrentHealth
@@ -42,7 +43,7 @@ public class Stats
         {
 
             maxhealth = value;
-            bar.Value = value;
+            bar.MaxValue = value;
         }
     }
     public void initialize()

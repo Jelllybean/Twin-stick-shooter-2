@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyBullet : MonoBehaviour {
+public class WinScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-            SceneManager.LoadScene("StartScreen (proto)");
-            PlayerPrefs.SetInt("TimesDied", PlayerPrefs.GetInt("TimesDied") + 1);
+            SceneManager.LoadScene("Winner Screen");
         }
     }
     // Use this for initialization

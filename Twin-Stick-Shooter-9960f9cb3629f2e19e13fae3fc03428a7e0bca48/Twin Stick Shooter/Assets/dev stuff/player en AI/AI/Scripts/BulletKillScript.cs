@@ -11,6 +11,7 @@ public class BulletKillScript : MonoBehaviour {
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
+            PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 1);
         }
     }
 

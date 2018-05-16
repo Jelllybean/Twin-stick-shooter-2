@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    // player health 
-    [SerializeField]
-    private Stats health; 
+     
+    
+    public HealthStat health;
 
-    // Use this for initialization
-    void Start ()
+
+    [SerializeField]
+    private ArmorStat armor;
+
+	// Use this for initialization
+	void Start ()
     {
         health.initialize();
+        armor.initialize();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +29,18 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             health.CurrentHealth += 10;
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            armor.CurrentArmor -= 10;
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            armor.CurrentArmor += 10;
+        }
+        if (Input.GetKeyDown(KeyCode.K) && armor.CurrentArmor <= 0)
+        {
+            health.CurrentHealth -= 10;
         }
     }
 }
