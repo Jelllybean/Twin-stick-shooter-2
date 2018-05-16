@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/Jelle Player.unity
     guid: 4d0b0a63f431536499daa8f2999ea5bc
+  - enabled: 1
+    path: Assets/scenes/Winner Screen.unity
+    guid: 3d51db40ce8972a4a9ffd17d22d62ff7

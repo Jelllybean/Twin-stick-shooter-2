@@ -13,6 +13,13 @@ public class ButtonHandler : MonoBehaviour {
     [SerializeField]
     private GameObject PauseScreen;
 
+    [SerializeField]
+    private Text TimesDied;
+    [SerializeField]
+    private Text TimesPlayed;
+    [SerializeField]
+    private Text Score;
+
 	// Use this for initialization
 	void Start () {
         CameraAnimator.GetComponent<Animator>();
@@ -26,11 +33,16 @@ public class ButtonHandler : MonoBehaviour {
             PauseScreen.SetActive(true);
             Time.timeScale = 0;
         }
+
+        TimesDied.text = "Times died: " + PlayerPrefs.GetInt("TimesDied");
+        TimesPlayed.text = "Times Played: " + PlayerPrefs.GetInt("TimesPlayed");
+        Score.text = "Score: " + PlayerPrefs.GetInt("Score");
 	}
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Jelle Player");       
+        SceneManager.LoadScene("Jelle Player");
+        PlayerPrefs.SetInt("TimesPlayed", PlayerPrefs.GetInt("TimesPlayed") + 1);
     }
     public void LoadMainMenu()
     {
@@ -44,15 +56,23 @@ public class ButtonHandler : MonoBehaviour {
     {
         CameraAnimator.SetBool("GoToCredits", true);
         CameraAnimator.SetBool("GoToMenu", false);
+        CameraAnimator.SetBool("GoToStats", false);
     }
     public void Menu()
     {
         CameraAnimator.SetBool("GoToCredits", false);
         CameraAnimator.SetBool("GoToMenu", true);
+        CameraAnimator.SetBool("GoToStats", false);
     }
     public void Resume()
     {
         PauseScreen.SetActive(false);
         Time.timeScale = 1;
+    }
+    public void Stats()
+    {
+        CameraAnimator.SetBool("GoToStats", true);
+        CameraAnimator.SetBool("GoToCredits", false);
+        CameraAnimator.SetBool("GoToMenu", false);
     }
 }
