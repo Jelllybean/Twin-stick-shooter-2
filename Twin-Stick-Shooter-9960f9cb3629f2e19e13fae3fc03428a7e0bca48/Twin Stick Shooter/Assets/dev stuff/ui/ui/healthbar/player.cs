@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
-{
+{ 
+    private bool armordown;
+    private int armorstrip;
      
-    
+    [SerializeField]
     public HealthStat health;
 
 
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        armorstrip = 1;
         health.initialize();
         armor.initialize();
 	}
@@ -30,17 +33,42 @@ public class Player : MonoBehaviour
         {
             health.CurrentHealth += 10;
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             armor.CurrentArmor -= 10;
         }
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            armor.CurrentArmor += 10;
+            Doddamage(40);
         }
-        if (Input.GetKeyDown(KeyCode.K) && armor.CurrentArmor <= 0)
+
+        
+        
+        
+
+            
+        
+    }
+    public void Doddamage( float damage)
+    {
+        float  doArmorDMG = 0 ;
+        float  doHealthDMG = 0 ;
+        if (armor.CurrentArmor < damage)
         {
-            health.CurrentHealth -= 10;
+            doHealthDMG = damage - armor.CurrentArmor;
+            doArmorDMG = damage - doHealthDMG;
+            armor.CurrentArmor -= doArmorDMG;
+            health.CurrentHealth -= doHealthDMG;
         }
+        else
+        {
+            armor.CurrentArmor -= damage;
+        }
+       
+
+
+        
+
+
     }
 }
