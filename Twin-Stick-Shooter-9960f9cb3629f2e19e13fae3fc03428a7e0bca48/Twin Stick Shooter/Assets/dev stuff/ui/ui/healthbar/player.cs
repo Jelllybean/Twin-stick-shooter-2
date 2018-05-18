@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
 { 
     private bool armordown;
     private int armorstrip;
+
+    [SerializeField]
+    private GameObject player;
      
     [SerializeField]
     public HealthStat health;
@@ -39,7 +42,11 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Doddamage(40);
+            Doddamage(60);
+        }
+        if (health.CurrentHealth <= 0)
+        {
+            this.gameObject
         }
 
         
