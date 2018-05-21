@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour {
+public class Armor : MonoBehaviour
+{
 
     [SerializeField]
     private float fillAmount;
@@ -36,11 +37,11 @@ public class HealthBar : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        handleHealtBar();
+        handleArmor();
     }
 
     // deze fuctie gaat de healthbar updaten
-    private void handleHealtBar()
+    private void handleArmor()
     {
         if (fillAmount != content.fillAmount)
         {

@@ -4,31 +4,31 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class HealthStat
+public class ArmorStat
 {
 
     [SerializeField]
-    private HealthBar bar;
+    private Armor Abar;
 
     [SerializeField]
-    private float maxhealth;
+    private float maxArmor;
 
     [SerializeField]
-    public float currentHealth;
+    private float currentArmor;
 
     // dit is de huidige value van de healthbar die de speler op dat moment heeft 
-    public float CurrentHealth
+    public float CurrentArmor
     {
         get
         {
-            return currentHealth;
+            return currentArmor;
         }
 
         set
         {
 
-            currentHealth = Mathf.Clamp(value, 0, MaxValue);
-            bar.Value = currentHealth;
+            currentArmor = value;
+            Abar.Value = currentArmor;
         }
     }
 
@@ -36,19 +36,19 @@ public class HealthStat
     {
         get
         {
-            return maxhealth;
+            return maxArmor;
         }
 
         set
         {
 
-            maxhealth = value;
-            bar.MaxValue = value;
+            maxArmor = value;
+            Abar.MaxValue = value;
         }
     }
     public void initialize()
     {
-        this.MaxValue = maxhealth;
-        this.CurrentHealth = currentHealth;
+        this.MaxValue = maxArmor;
+        this.CurrentArmor = currentArmor;
     }
 }
