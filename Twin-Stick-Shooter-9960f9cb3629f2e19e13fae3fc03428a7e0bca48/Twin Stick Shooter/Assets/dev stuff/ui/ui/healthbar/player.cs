@@ -44,10 +44,10 @@ public class Player : MonoBehaviour
         {
             Doddamage(60);
         }
-        if (health.CurrentHealth <= 0)
-        {
-            this.gameObject
-        }
+        //if (health.CurrentHealth <= 0)
+        //{
+        //    this.gameObject
+        //}
 
         
         

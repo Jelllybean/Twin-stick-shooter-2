@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 359831273}
   - component: {fileID: 359831272}
   - component: {fileID: 359831271}
+  - component: {fileID: 359831270}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -131,8 +132,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
-=======
 --- !u!114 &359831270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,15 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7f299339909184a90b3ff1e2c24437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health:
-    bar: {fileID: 1252896117}
-    maxhealth: 100
-    currentHealth: 100
-  armor:
-    Abar: {fileID: 1215332114}
-    maxArmor: 100
-    currentArmor: 100
->>>>>>> 326986b70b667ee0f926f25157ca43a78a87543a
 --- !u!23 &359831271
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -567,7 +557,6 @@ GameObject:
   - component: {fileID: 1252896113}
   - component: {fileID: 1252896115}
   - component: {fileID: 1252896114}
-  - component: {fileID: 1252896117}
   m_Layer: 5
   m_Name: HealthbBar
   m_TagString: Untagged
@@ -627,20 +616,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1252896112}
---- !u!114 &1252896117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1252896112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb166d235e43a0448e2d1e084cde16f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillAmount: 1
-  content: {fileID: 1958975121}
-  lerpspeed: 5
 --- !u!1 &1449929606
 GameObject:
   m_ObjectHideFlags: 0
