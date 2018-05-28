@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class EnemyBullet : MonoBehaviour {
 
+    [SerializeField]
+    private HealthStat health;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            Destroy(other.gameObject);
-            SceneManager.LoadScene("StartScreen (proto)");
-            PlayerPrefs.SetInt("TimesDied", PlayerPrefs.GetInt("TimesDied") + 1);
+            //Destroy(other.gameObject);
+            //SceneManager.LoadScene("StartScreen (proto)");
+            //PlayerPrefs.SetInt("TimesDied", PlayerPrefs.GetInt("TimesDied") + 1);
         }
     }
     // Use this for initialization

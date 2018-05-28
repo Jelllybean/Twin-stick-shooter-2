@@ -39,7 +39,7 @@ public class CloseDoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(KeyCardAquired);
+        //print(KeyCardAquired);
         if (PlayerAtDoor == true)
         {
             if (Input.GetKeyDown(KeyCode.E))

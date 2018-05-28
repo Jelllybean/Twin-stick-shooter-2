@@ -39,9 +39,11 @@ GameObject:
   - component: {fileID: 4869043402847090}
   - component: {fileID: 33723914172857352}
   - component: {fileID: 136166453041024728}
+  - component: {fileID: 114200663127332104}
   - component: {fileID: 114533848645498658}
   - component: {fileID: 23378700719485360}
   - component: {fileID: 54860828003365250}
+  - component: {fileID: 114035421850182016}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -64,6 +66,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1364504293445972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4123490014716882}
+  - component: {fileID: 65696857576652262}
+  m_Layer: 0
+  m_Name: DoorKeyLift
+  m_TagString: KeyCardLift
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1387703855727408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4676506850662940}
+  - component: {fileID: 65231729559377866}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: KeyCard
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4123490014716882
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1364504293445972}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.15, y: 0.4, z: 0.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4869043402847090}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4528298779613858
 Transform:
   m_ObjectHideFlags: 1
@@ -76,6 +123,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4869043402847090}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4676506850662940
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387703855727408}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.06866217}
+  m_LocalScale: {x: 0.5493554, y: 0.5493554, z: 0.5493554}
+  m_Children: []
+  m_Father: {fileID: 4869043402847090}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4705221405338960
 Transform:
@@ -97,11 +157,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032621325040368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 101.3, y: 2.1858, z: -22.92}
+  m_LocalPosition: {x: 94.55, y: 28.927, z: -33.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4705221405338960}
   - {fileID: 4528298779613858}
+  - {fileID: 4676506850662940}
+  - {fileID: 4123490014716882}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -202,6 +264,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65231729559377866
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387703855727408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65696857576652262
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1364504293445972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65726335218039610
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -214,6 +300,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114035421850182016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032621325040368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114200663127332104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032621325040368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7f299339909184a90b3ff1e2c24437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1032621325040368}
+  health:
+    bar: {fileID: 0}
+    maxhealth: 100
+    currentHealth: 100
+  armor:
+    Abar: {fileID: 0}
+    maxArmor: 100
+    currentArmor: 100
 --- !u!114 &114533848645498658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,14 +343,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  MainCamera: {fileID: 0}
   Kogel: {fileID: 1941548851872016, guid: 393e08c87b9bc0848b1b12bb848a1602, type: 2}
   Bullet_Emitter: {fileID: 1280911339043830}
   Crosshairs: {fileID: 0}
-  Bullet_force: 500
+  Bullet_force: 1500
   MaxShells: 0
   PistolActive: 0
   MachineGunActive: 0
   ShotgunActive: 0
+  DoorKey: {fileID: 1387703855727408}
+  DoorKeyLift: {fileID: 1364504293445972}
   PistolAmmoCount: {fileID: 0}
 --- !u!136 &136166453041024728
 CapsuleCollider:

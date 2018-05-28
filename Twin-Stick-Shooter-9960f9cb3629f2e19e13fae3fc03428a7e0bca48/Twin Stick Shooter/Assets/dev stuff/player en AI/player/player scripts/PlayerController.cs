@@ -34,6 +34,11 @@ public class PlayerController : MonoBehaviour {
     bool ShotgunActive;
 
     [SerializeField]
+    private GameObject DoorKey;
+    [SerializeField]
+    private GameObject DoorKeyLift;
+
+    [SerializeField]
     private Text PistolAmmoCount;
 
     int PistolAmmo;
@@ -51,7 +56,7 @@ public class PlayerController : MonoBehaviour {
         MachineGunAmmo = 30;
         PistolAmmoReserve = 36;
 
-        //Cursor.visible = false;
+            Cursor.visible = false;
 
         Time.timeScale = 1.0f;
 	}
@@ -139,6 +144,16 @@ public class PlayerController : MonoBehaviour {
         {
             MachineGunReserve += 30;
             Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag == "KeyCard")
+        {
+            DoorKey.SetActive(true);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "KeyCardLift")
+        {
+            DoorKeyLift.SetActive(true);
+            Destroy(other.gameObject); 
         }
     }
     public void Pistol()

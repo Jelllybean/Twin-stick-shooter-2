@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114836619388553162}
   m_Layer: 0
   m_Name: Kogel enemy
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,3 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ac6910c0ea35d46a3cbdea1a4ebdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health:
+    bar: {fileID: 114451005268547462, guid: 57334790c3fcc3d42864eb1e3384be9a, type: 2}
+    maxhealth: 100
+    currentHealth: 100

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - KeyCard
+  - Health
+  - Armor
+  - KeyCardLift
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

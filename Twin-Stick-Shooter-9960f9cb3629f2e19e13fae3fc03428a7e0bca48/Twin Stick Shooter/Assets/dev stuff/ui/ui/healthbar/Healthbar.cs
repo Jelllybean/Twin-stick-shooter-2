@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour {
+public class Healthbar : MonoBehaviour {
 
     [SerializeField]
     private float fillAmount;

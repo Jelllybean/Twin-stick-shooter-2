@@ -8,7 +8,7 @@ public class HealthStat
 {
 
     [SerializeField]
-    private HealthBar bar;
+    private Healthbar bar;
 
     [SerializeField]
     private float maxhealth;
