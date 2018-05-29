@@ -108,6 +108,7 @@ public class player : MonoBehaviour
         if(health.CurrentHealth <= 0)
         {
             Destroy(gameObject);
+            PlayerPrefs.SetInt("KilledByRobot", PlayerPrefs.GetInt("KilledByRobot") + 1);
             SceneManager.LoadScene("StartScreen (proto)");
         }
         

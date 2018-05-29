@@ -19,6 +19,8 @@ public class ButtonHandler : MonoBehaviour {
     private Text TimesPlayed;
     [SerializeField]
     private Text Score;
+    [SerializeField]
+    private Text TimesDiedByRobot;
 
 	// Use this for initialization
 	void Start () {
@@ -28,15 +30,17 @@ public class ButtonHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseScreen.SetActive(true);
-            Time.timeScale = 0;
-        }
+		//if (Input.GetKeyDown(KeyCode.Escape))
+  //      {
+  //          Cursor.visible = true;
+  //          PauseScreen.SetActive(true);
+  //          Time.timeScale = 0;
+  //      }
 
         TimesDied.text = "Times died: " + PlayerPrefs.GetInt("TimesDied");
         TimesPlayed.text = "Times Played: " + PlayerPrefs.GetInt("TimesPlayed");
         Score.text = "Score: " + PlayerPrefs.GetInt("Score");
+        TimesDiedByRobot.text = "Times killed by robot: " + PlayerPrefs.GetInt("KilledByRobot");
 	}
 
     public void StartGame()
@@ -68,6 +72,7 @@ public class ButtonHandler : MonoBehaviour {
     {
         PauseScreen.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
     public void Stats()
     {
