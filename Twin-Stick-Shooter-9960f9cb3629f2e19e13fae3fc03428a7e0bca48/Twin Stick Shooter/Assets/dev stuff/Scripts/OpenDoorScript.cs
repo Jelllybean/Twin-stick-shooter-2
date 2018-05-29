@@ -47,7 +47,7 @@ public class OpenDoorScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        print(KeyCardLiftAquired);
+        //print(KeyCardLiftAquired);
 		//if (PlayerAtDoor == true)
   //      {
             if (KeyCardLiftAquired == true)
