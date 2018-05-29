@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - KeyCard
+  - Health
+  - Armor
+  - KeyCardLift
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

@@ -34,10 +34,17 @@ public class PlayerController : MonoBehaviour {
     bool ShotgunActive;
 
     [SerializeField]
+    private GameObject DoorKey;
+    [SerializeField]
+    private GameObject DoorKeyLift;
+
+    [SerializeField]
     private Text PistolAmmoCount;
 
     int PistolAmmo;
     int MachineGunAmmo;
+    int PistolAmmoReserve;
+    int MachineGunReserve;
 
     bool ShotgunFired;
 	void Start ()
@@ -47,8 +54,9 @@ public class PlayerController : MonoBehaviour {
 
         PistolAmmo = 12;
         MachineGunAmmo = 30;
+        PistolAmmoReserve = 36;
 
-        //Cursor.visible = false;
+            Cursor.visible = false;
 
         Time.timeScale = 1.0f;
 	}
@@ -97,6 +105,15 @@ public class PlayerController : MonoBehaviour {
             Bullet_Emitter.transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
             Crosshairs.transform.position = (new Vector3(pointToLook.x, Crosshairs.transform.position.y, pointToLook.z));
         }
+
+        if (PistolAmmoReserve <= 0)
+        {
+            PistolAmmoReserve = 0;
+        }
+        if (MachineGunReserve <= 0)
+        {
+            MachineGunReserve = 0;
+        }
     }
 
     private void FixedUpdate()
@@ -116,12 +133,36 @@ public class PlayerController : MonoBehaviour {
             SubMachineGun();   
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "PistolAmmo")
+        {
+            PistolAmmoReserve += 12;
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.name == "MachineGunAmmo")
+        {
+            MachineGunReserve += 30;
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.tag == "KeyCard")
+        {
+            DoorKey.SetActive(true);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "KeyCardLift")
+        {
+            DoorKeyLift.SetActive(true);
+            Destroy(other.gameObject); 
+        }
+    }
     public void Pistol()
     {
-        PistolAmmoCount.text = "Pistol: " + PistolAmmo;
+        PistolAmmoCount.text = "Pistol: " + PistolAmmo + " / " + PistolAmmoReserve;
         if (Input.GetKeyDown(KeyCode.R))
         {
             PistolAmmo = 12;
+            PistolAmmoReserve -= 12;
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -137,10 +178,11 @@ public class PlayerController : MonoBehaviour {
     }
     public void SubMachineGun()
     {
-        PistolAmmoCount.text = "Machine gun: " + MachineGunAmmo;
+        PistolAmmoCount.text = "Machine gun: " + MachineGunAmmo + " / " + MachineGunReserve;
         if (Input.GetKeyDown(KeyCode.R))
         {
             MachineGunAmmo = 30;
+            MachineGunReserve -= 30;
         }
         if (Input.GetKey(KeyCode.Mouse0))
         {
