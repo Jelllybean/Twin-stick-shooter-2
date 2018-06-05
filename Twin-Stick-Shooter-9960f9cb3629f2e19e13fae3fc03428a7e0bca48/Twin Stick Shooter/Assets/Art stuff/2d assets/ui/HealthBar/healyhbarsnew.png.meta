@@ -1,10 +1,6 @@
 fileFormatVersion: 2
 guid: 9f3b3c42f8b79f14bbee2b1a1341c0db
-<<<<<<< HEAD
-timeCreated: 1528115777
-=======
-timeCreated: 1528184513
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+timeCreated: 1528187221
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,22 +9,11 @@ TextureImporter:
     21300004: healyhbarsnew_2
     21300006: healyhbarsnew_3
     21300008: healyhbarsnew_4
-<<<<<<< HEAD
-    21300010: healyhbarsnew_23
-    21300012: healyhbarsnew_24
-    21300014: healyhbarsnew_25
-    21300016: healyhbarsnew_26
-    21300018: healyhbarsnew_27
-    21300020: healyhbarsnew_5
-    21300022: healyhbarsnew_6
-  externalObjects: {}
-=======
     21300010: healyhbarsnew_5
     21300012: healyhbarsnew_6
     21300014: healyhbarsnew_7
     21300016: healyhbarsnew_8
     21300018: healyhbarsnew_9
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -55,15 +40,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapU: 1
-<<<<<<< HEAD
-    wrapV: 1
-=======
     wrapV: -1
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
     wrapW: -1
   nPOTScale: 0
   lightmap: 0
@@ -86,32 +67,20 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-<<<<<<< HEAD
-    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-=======
-  - buildTarget: Standalone
-    maxTextureSize: 2048
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-<<<<<<< HEAD
-    androidETC2FallbackOverride: 0
-=======
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -119,17 +88,10 @@ TextureImporter:
       name: healyhbarsnew_0
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 295
-        y: 10551
-        width: 788
-        height: 788
-=======
-        x: 202
-        y: 10517
-        width: 951
-        height: 880
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 360
+        y: 10532
+        width: 750
+        height: 1023
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,17 +102,10 @@ TextureImporter:
       name: healyhbarsnew_1
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 1335
-        y: 10760
-        width: 382
-        height: 388
-=======
-        x: 1197
-        y: 10618
-        width: 793
-        height: 851
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 1153
+        y: 10661
+        width: 822
+        height: 606
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,17 +116,10 @@ TextureImporter:
       name: healyhbarsnew_2
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 560
-        y: 9973
-        width: 3390
-        height: 572
-=======
-        x: 490
-        y: 10013
-        width: 3547
-        height: 533
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 461
+        y: 9984
+        width: 3561
+        height: 591
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,17 +130,10 @@ TextureImporter:
       name: healyhbarsnew_3
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 369
-        y: 9333
-        width: 3397
-        height: 585
-=======
-        x: 778
-        y: 8513
-        width: 3158
-        height: 894
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 245
+        y: 9263
+        width: 3648
+        height: 721
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,17 +144,10 @@ TextureImporter:
       name: healyhbarsnew_4
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 905
-        y: 9124
-        width: 6
-        height: 6
-=======
-        x: 319
-        y: 9237
-        width: 3587
-        height: 743
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 850
+        y: 8787
+        width: 3057
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,51 +155,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: healyhbarsnew_23
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 7192
-        width: 966
-        height: 966
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: healyhbarsnew_24
-      rect:
-        serializedVersion: 2
-        x: 1428
-        y: 7389
-        width: 295
-        height: 369
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: healyhbarsnew_25
-      rect:
-        serializedVersion: 2
-        x: 726
-        y: 6429
-        width: 3569
-        height: 751
-=======
       name: healyhbarsnew_5
       rect:
         serializedVersion: 2
-        x: 130
-        y: 7223
-        width: 1027
-        height: 941
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 202
+        y: 7302
+        width: 879
+        height: 952
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,23 +169,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: healyhbarsnew_26
-      rect:
-        serializedVersion: 2
-        x: 418
-        y: 5611
-        width: 3403
-        height: 603
-=======
       name: healyhbarsnew_6
       rect:
         serializedVersion: 2
-        x: 1246
-        y: 7273
-        width: 628
-        height: 655
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 1326
+        y: 7288
+        width: 577
+        height: 591
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,23 +183,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: healyhbarsnew_27
-      rect:
-        serializedVersion: 2
-        x: 714
-        y: 5592
-        width: 6
-        height: 7
-=======
       name: healyhbarsnew_7
       rect:
         serializedVersion: 2
-        x: 816
-        y: 6436
-        width: 3476
-        height: 721
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 677
+        y: 6336
+        width: 3648
+        height: 880
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,23 +197,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: healyhbarsnew_5
-      rect:
-        serializedVersion: 2
-        x: 897
-        y: 5109
-        width: 2874
-        height: 272
-=======
       name: healyhbarsnew_8
       rect:
         serializedVersion: 2
-        x: 841
-        y: 5029
-        width: 2972
-        height: 386
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 331
+        y: 5543
+        width: 3576
+        height: 721
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,23 +211,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: healyhbarsnew_6
-      rect:
-        serializedVersion: 2
-        x: 947
-        y: 8827
-        width: 2873
-        height: 280
-=======
       name: healyhbarsnew_9
       rect:
         serializedVersion: 2
-        x: 340
-        y: 5521
-        width: 3686
-        height: 706
->>>>>>> 88cf9e934eabbcced47072013682d502aa47ed01
+        x: 778
+        y: 5067
+        width: 3043
+        height: 433
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
