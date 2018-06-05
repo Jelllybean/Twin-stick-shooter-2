@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class player : MonoBehaviour
+public class HealthAndArmor : MonoBehaviour
 { 
     private bool armordown;
     private int armorstrip;

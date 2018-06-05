@@ -27,7 +27,6 @@ public class OpenDoorScript : MonoBehaviour {
         }
         if (other.gameObject.tag == "KeyCardLift")
         {
-            print("hoi");
             KeyCardLiftAquired = true;
             //Destroy(other.gameObject);
         }
