@@ -13,7 +13,7 @@ public class WalkerScript : MonoBehaviour
     private GameObject Bullet_Emitter;
     [SerializeField]
     private GameObject Kogel;
-    [SerializeField]
+    [SerializeField]    
     private GameObject Speler;
     [SerializeField]
     private float Bullet_Forward_Force;
@@ -26,7 +26,7 @@ public class WalkerScript : MonoBehaviour
     void Start()
     {
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
-        m_NavMeshAgent.SetDestination(m_StartPoint.position);
+        //m_NavMeshAgent.SetDestination(m_StartPoint.position);
     }
 
     private float Distance(Vector3 objectA, Vector3 objectb)
@@ -35,21 +35,12 @@ public class WalkerScript : MonoBehaviour
     }
     void Update()
     {
-        if (WalkerDuring == true)
-        {
-            if (timer >= 10)
-            {
-                m_NavMeshAgent.SetDestination(m_StartPoint.position);
-                timer = 0;
-                WalkerDuring = false;
-            }
-        }
+
 
         //field of view dingen
         Vector3 targetDir = m_Target.position - transform.position;
 
         float angleToPlayer = (Vector3.Angle(targetDir, transform.forward));
-
 
         //&& angleToPlayer >= -60 && angleToPlayer <= 60
         //Debug.Log(m_RayHit.collider.name);
@@ -58,6 +49,17 @@ public class WalkerScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (WalkerDuring == true)
+        {
+            m_NavMeshAgent.SetDestination(m_StartPoint.position);
+            //if (timer >= 10)
+            //{
+            //    timer = 0;
+            //    WalkerDuring = false;
+            //}
+        }
+
+
         Vector3 Direction = (m_Target.position - transform.position).normalized;
         if (Physics.Raycast(transform.position, Direction, out m_RayHit, 15f))
         {
@@ -84,8 +86,9 @@ public class WalkerScript : MonoBehaviour
                     }
                 }
             }
-            else
+            else 
             {
+                //m_NavMeshAgent.SetDestination(m_StartPoint.position);
                 WalkerDuring = true;
             }
         }

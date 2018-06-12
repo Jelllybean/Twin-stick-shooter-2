@@ -13,7 +13,7 @@ public class RapidQuitRestart : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             Application.Quit();
         }

@@ -10,8 +10,6 @@ public class ButtonHandler : MonoBehaviour {
     private string SceneToBeLoaded;
     [SerializeField]
     private Animator CameraAnimator;
-    [SerializeField]
-    private GameObject PauseScreen;
 
     [SerializeField]
     private Text TimesDied;
@@ -67,12 +65,6 @@ public class ButtonHandler : MonoBehaviour {
         CameraAnimator.SetBool("GoToCredits", false);
         CameraAnimator.SetBool("GoToMenu", true);
         CameraAnimator.SetBool("GoToStats", false);
-    }
-    public void Resume()
-    {
-        PauseScreen.SetActive(false);
-        Time.timeScale = 1;
-        Cursor.visible = false;
     }
     public void Stats()
     {

@@ -40,10 +40,9 @@ GameObject:
   - component: {fileID: 33723914172857352}
   - component: {fileID: 136166453041024728}
   - component: {fileID: 114200663127332104}
-  - component: {fileID: 114533848645498658}
+  - component: {fileID: 114369268321820808}
   - component: {fileID: 23378700719485360}
   - component: {fileID: 54860828003365250}
-  - component: {fileID: 114035421850182016}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -105,8 +104,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1364504293445972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 0.4, z: 0.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.02, y: 0.4, z: 0.01}
+  m_LocalScale: {x: 0.5907855, y: 0.5907855, z: 0.5907855}
   m_Children: []
   m_Father: {fileID: 4869043402847090}
   m_RootOrder: 3
@@ -215,7 +214,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fdd1f5cdf40a0ea4fbd787ecbb6aa549, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -300,17 +299,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114035421850182016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032621325040368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114200663127332104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -331,7 +319,7 @@ MonoBehaviour:
     Abar: {fileID: 0}
     maxArmor: 100
     currentArmor: 100
---- !u!114 &114533848645498658
+--- !u!114 &114369268321820808
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -342,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d53cbeb1a975d4ea8f826149a88e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
   MainCamera: {fileID: 0}
   Kogel: {fileID: 1941548851872016, guid: 393e08c87b9bc0848b1b12bb848a1602, type: 2}
   Bullet_Emitter: {fileID: 1280911339043830}
