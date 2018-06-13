@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -134,5 +135,17 @@ public class PauseManager : MonoBehaviour
         public Vector3 Velocity;
         public float Drag;
         public float AngularDrag;
+    }
+    public void ResumeButton()
+    {
+        IsPaused = !IsPaused;
+    }
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("StartScreen (proto)");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

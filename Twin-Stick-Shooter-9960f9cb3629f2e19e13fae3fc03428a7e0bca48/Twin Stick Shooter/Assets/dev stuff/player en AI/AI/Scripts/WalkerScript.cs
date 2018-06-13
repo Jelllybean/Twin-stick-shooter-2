@@ -26,7 +26,6 @@ public class WalkerScript : MonoBehaviour
     void Start()
     {
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
-        //m_NavMeshAgent.SetDestination(m_StartPoint.position);
     }
 
     private float Distance(Vector3 objectA, Vector3 objectb)
@@ -49,6 +48,7 @@ public class WalkerScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        m_NavMeshAgent.SetDestination(m_StartPoint.position);
         if (WalkerDuring == true)
         {
             m_NavMeshAgent.SetDestination(m_StartPoint.position);
