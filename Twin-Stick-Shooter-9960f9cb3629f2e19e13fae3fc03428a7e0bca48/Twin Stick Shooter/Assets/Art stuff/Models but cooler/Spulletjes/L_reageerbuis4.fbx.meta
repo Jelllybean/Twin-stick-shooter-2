@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 262a0f3bd65b85c4e98c8f7a12857fef
-timeCreated: 1528967361
+timeCreated: 1528967901
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -11,7 +11,7 @@ ModelImporter:
     3300000: //RootNode
     4300000: L_reageerbuis4
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

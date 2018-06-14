@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b6d7512fe99a2fb4a8bdbb9b476a8da1
-timeCreated: 1528967361
+timeCreated: 1528967901
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -11,7 +11,7 @@ ModelImporter:
     3300000: //RootNode
     4300000: L_reageerbuishouder
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
