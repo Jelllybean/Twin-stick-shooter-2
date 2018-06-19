@@ -67,7 +67,6 @@ public class HealthAndArmor : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        print(health.currentHealth);
         if(PlayerHit == true)
         {
             armor.CurrentArmor -= 40;
