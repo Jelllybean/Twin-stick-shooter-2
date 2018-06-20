@@ -8,6 +8,8 @@ public class LiftScript : MonoBehaviour {
     private GameObject Speler;
     [SerializeField]
     private GameObject lift;
+    [SerializeField]
+    private AudioSource m_LiftMusic;
 
     [SerializeField]
     private Camera MainCamera;
@@ -34,6 +36,7 @@ public class LiftScript : MonoBehaviour {
             OnLift = false;
             MainCamera.enabled = true;
             LiftCamera.enabled = false;
+            m_LiftMusic.Stop();
         }
     }
     // Use this for initialization
@@ -56,6 +59,7 @@ public class LiftScript : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.E))
         {
             OnLift = true;
+            m_LiftMusic.Play();
         }
     }
 }

@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField]
     private Text PistolAmmoCount;
+    [SerializeField]
+    private AudioSource m_GunCocking;
+    [SerializeField]
+    private AudioSource m_MachineGunCocking;
 
     int PistolAmmo;
     int MachineGunAmmo;
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour {
         PistolAmmo = 12;
         MachineGunAmmo = 30;
         PistolAmmoReserve = 36;
+        MachineGunReserve = 90;
 
             Cursor.visible = false;
 
@@ -69,12 +74,14 @@ public class PlayerController : MonoBehaviour {
             PistolActive = true;
             ShotgunActive = false;
             MachineGunActive = false;
+            m_GunCocking.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             PistolActive = false;
             ShotgunActive = false;
             MachineGunActive = true;
+            m_MachineGunCocking.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -159,7 +166,7 @@ public class PlayerController : MonoBehaviour {
     public void Pistol()
     {
         PistolAmmoCount.text = "Pistol: " + PistolAmmo + " / " + PistolAmmoReserve;
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && PistolAmmoReserve >= 0)
         {
             PistolAmmo = 12;
             PistolAmmoReserve -= 12;
@@ -178,11 +185,20 @@ public class PlayerController : MonoBehaviour {
     }
     public void SubMachineGun()
     {
+        print(MachineGunReserve);
         PistolAmmoCount.text = "Machine gun: " + MachineGunAmmo + " / " + MachineGunReserve;
         if (Input.GetKeyDown(KeyCode.R))
         {
-            MachineGunAmmo = 30;
-            MachineGunReserve -= 30;
+            if(MachineGunReserve <= 0)
+            {
+                return;
+            }
+            else
+            {
+                MachineGunAmmo = 30;
+                MachineGunReserve -= 30;
+            }
+
         }
         if (Input.GetKey(KeyCode.Mouse0))
         {
