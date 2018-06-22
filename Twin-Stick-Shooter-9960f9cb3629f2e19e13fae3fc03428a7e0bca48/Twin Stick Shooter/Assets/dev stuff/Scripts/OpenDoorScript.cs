@@ -10,6 +10,9 @@ public class OpenDoorScript : MonoBehaviour {
     [SerializeField]
     private Animator KeyDoor;
 
+    [SerializeField]
+    private AudioSource m_Audio;
+
     bool PlayerAtDoor;
 
     bool KeyCardLiftAquired;
@@ -35,6 +38,7 @@ public class OpenDoorScript : MonoBehaviour {
     {
         KeyCardAquired = false;
         KeyCardLiftAquired = false;
+        PlayerAtDoor = false;
     }
     // Use this for initialization
     void Start ()
@@ -49,14 +53,20 @@ public class OpenDoorScript : MonoBehaviour {
         //print(KeyCardLiftAquired);
 		//if (PlayerAtDoor == true)
   //      {
-            if (KeyCardLiftAquired == true)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    Door.SetBool("Open", true);
-                }
-            }
+            //if (KeyCardLiftAquired == true)
+            //{
+
+            //}
         //}
+
+        if(PlayerAtDoor == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Door.SetBool("Open", true);
+                m_Audio.Play();
+            }
+        }
         if (KeyCardAquired == true)
         {
             if(Input.GetKeyDown(KeyCode.E))

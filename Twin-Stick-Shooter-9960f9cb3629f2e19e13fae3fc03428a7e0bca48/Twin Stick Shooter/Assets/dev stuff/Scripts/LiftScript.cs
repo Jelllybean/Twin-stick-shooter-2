@@ -8,22 +8,39 @@ public class LiftScript : MonoBehaviour {
     private GameObject Speler;
     [SerializeField]
     private GameObject lift;
+    [SerializeField]
+    private AudioSource m_LiftMusic;
+    [SerializeField]
+    private PlayerController m_movement;
 
     [SerializeField]
     private Camera MainCamera;
     [SerializeField]
     private Camera LiftCamera;
 
+    bool FirstEnter;
+
     Vector3 speed;
     bool OnLift;
-    private void OnCollisionStay(Collision other)
+    void Start()
     {
-        if (other.collider.tag == "Player")
+        speed.y = 0.1f;
+        FirstEnter = true;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (FirstEnter == true)
         {
-            Speler.transform.SetParent(transform);
-            ActivateLift();
-            MainCamera.enabled = false;
-            LiftCamera.enabled = true;
+            if (other.collider.tag == "Player")
+            {
+                Speler.transform.SetParent(transform);
+                ActivateLift();
+                MainCamera.enabled = false;
+                LiftCamera.enabled = true;
+                m_movement.enabled = false;
+                OnLift = true;
+            }
         }
     }
     private void OnCollisionExit(Collision other)
@@ -34,13 +51,11 @@ public class LiftScript : MonoBehaviour {
             OnLift = false;
             MainCamera.enabled = true;
             LiftCamera.enabled = false;
+            m_movement.enabled = true;
+            m_LiftMusic.Stop();
+            FirstEnter = false;
         }
     }
-    // Use this for initialization
-    void Start ()
-    {
-        speed.y = 0.1f;
-	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -56,6 +71,7 @@ public class LiftScript : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.E))
         {
             OnLift = true;
+            m_LiftMusic.Play();
         }
     }
 }

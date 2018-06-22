@@ -18,14 +18,17 @@ public class WalkerScript : MonoBehaviour
     [SerializeField]
     private float Bullet_Forward_Force;
     float timer;
-    private bool WalkerStart = true;
-    bool WalkerDuring = false;
+    float SpottedTimer;
+    private bool WalkerStart;
+    bool WalkerDuring;
 
     RaycastHit m_RayHit;
 
     void Start()
     {
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
+        WalkerStart = true;
+        WalkerDuring = false;
     }
 
     private float Distance(Vector3 objectA, Vector3 objectb)
@@ -37,38 +40,45 @@ public class WalkerScript : MonoBehaviour
 
 
         //field of view dingen
-        Vector3 targetDir = m_Target.position - transform.position;
 
-        float angleToPlayer = (Vector3.Angle(targetDir, transform.forward));
 
-        //&& angleToPlayer >= -60 && angleToPlayer <= 60
+        
         //Debug.Log(m_RayHit.collider.name);
             //Debug.DrawLine(transform.position, m_RayHit.point, Color.green);
         
     }
     private void FixedUpdate()
     {
-        m_NavMeshAgent.SetDestination(m_StartPoint.position);
-        if (WalkerDuring == true)
+        SpottedTimer +=  1 * Time.deltaTime;
+        timer += 1 * Time.deltaTime;
+        if (WalkerStart == true)
         {
             m_NavMeshAgent.SetDestination(m_StartPoint.position);
-            //if (timer >= 10)
-            //{
-            //    timer = 0;
-            //    WalkerDuring = false;
-            //}
         }
+        if (WalkerDuring == true)
+        {
+            if (SpottedTimer >= 5)
+            {
+                m_NavMeshAgent.SetDestination(m_StartPoint.position);
+                SpottedTimer = 0;
+                WalkerDuring = false;
+                WalkerStart = true;
+            }
+        }
+        print(SpottedTimer);
+        Vector3 targetDir = m_Target.position - transform.position;
 
+        float angleToPlayer = (Vector3.Angle(targetDir, transform.forward));
 
         Vector3 Direction = (m_Target.position - transform.position).normalized;
         if (Physics.Raycast(transform.position, Direction, out m_RayHit, 15f))
         {
-            if (m_RayHit.collider.tag == "Player")
+            if (m_RayHit.collider.tag == "Player" && angleToPlayer >= -60 && angleToPlayer <= 60)
             {
                 m_NavMeshAgent.SetDestination(m_Target.position);
+                WalkerStart = false;
                 if (Distance(transform.position, m_Target.position) < 15f)
                 {
-                    timer += 1 * Time.deltaTime;
                     if (timer >= 1)
                     {
                         GameObject Temporary_Bullet_Handler;
@@ -88,7 +98,6 @@ public class WalkerScript : MonoBehaviour
             }
             else 
             {
-                //m_NavMeshAgent.SetDestination(m_StartPoint.position);
                 WalkerDuring = true;
             }
         }
