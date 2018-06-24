@@ -11,26 +11,50 @@ public class LiftScript : MonoBehaviour {
     [SerializeField]
     private AudioSource m_LiftMusic;
     [SerializeField]
+<<<<<<< HEAD
     private PlayerController m_move;
+=======
+    private PlayerController m_movement;
+>>>>>>> ca00ccce9320ebb5686ea02ce7ee0cc2df1a8171
 
     [SerializeField]
     private Camera MainCamera;
     [SerializeField]
     private Camera LiftCamera;
 
+    bool FirstEnter;
+
     Vector3 speed;
     bool OnLift;
-    private void OnCollisionStay(Collision other)
+    void Start()
     {
+<<<<<<< HEAD
 
         if (OnLift == true)
+=======
+        speed.y = 0.1f;
+        FirstEnter = true;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (FirstEnter == true)
+>>>>>>> ca00ccce9320ebb5686ea02ce7ee0cc2df1a8171
         {
             if (other.collider.tag == "Player")
             {
                 Speler.transform.SetParent(transform);
+<<<<<<< HEAD
                 MainCamera.enabled = false;
                 LiftCamera.enabled = true;
                 transform.position -= speed;
+=======
+                ActivateLift();
+                MainCamera.enabled = false;
+                LiftCamera.enabled = true;
+                m_movement.enabled = false;
+                OnLift = true;
+>>>>>>> ca00ccce9320ebb5686ea02ce7ee0cc2df1a8171
             }
         }
     }
@@ -42,6 +66,7 @@ public class LiftScript : MonoBehaviour {
             OnLift = false;
             MainCamera.enabled = true;
             LiftCamera.enabled = false;
+<<<<<<< HEAD
             m_move.enabled = true;
             m_LiftMusic.Stop();
             OnLift = false;
@@ -54,6 +79,13 @@ public class LiftScript : MonoBehaviour {
         OnLift = true;
         m_LiftMusic.Play();
     }
+=======
+            m_movement.enabled = true;
+            m_LiftMusic.Stop();
+            FirstEnter = false;
+        }
+    }
+>>>>>>> ca00ccce9320ebb5686ea02ce7ee0cc2df1a8171
 	
 	// Update is called once per frame
 	void Update ()
