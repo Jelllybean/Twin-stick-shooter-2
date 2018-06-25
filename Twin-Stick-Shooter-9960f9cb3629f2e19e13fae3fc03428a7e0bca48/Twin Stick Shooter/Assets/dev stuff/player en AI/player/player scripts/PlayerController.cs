@@ -142,12 +142,12 @@ public class PlayerController : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "PistolAmmo")
+        if (other.gameObject.tag == "PistolAmmo")
         {
             PistolAmmoReserve += 12;
             Destroy(other.gameObject);
         }
-        if (other.gameObject.name == "MachineGunAmmo")
+        if (other.gameObject.tag == "MachineGunAmmo")
         {
             MachineGunReserve += 30;
             Destroy(other.gameObject);
