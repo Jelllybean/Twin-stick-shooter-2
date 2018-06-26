@@ -11,7 +11,10 @@ public class LiftScript : MonoBehaviour {
     [SerializeField]
     private AudioSource m_LiftMusic;
     [SerializeField]
+    private AudioSource m_LiftDong;
+    [SerializeField]
     private PlayerController m_movement;
+
 
     [SerializeField]
     private Camera MainCamera;
@@ -53,6 +56,7 @@ public class LiftScript : MonoBehaviour {
             LiftCamera.enabled = false;
             m_movement.enabled = true;
             m_LiftMusic.Stop();
+            m_LiftDong.Play();
             FirstEnter = false;
         }
     }
