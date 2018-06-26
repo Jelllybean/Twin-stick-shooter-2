@@ -12,6 +12,7 @@ TagManager:
   - EnemyBullet
   - PistolAmmo
   - MachineGunAmmo
+  - Bullet
   layers:
   - Default
   - TransparentFX

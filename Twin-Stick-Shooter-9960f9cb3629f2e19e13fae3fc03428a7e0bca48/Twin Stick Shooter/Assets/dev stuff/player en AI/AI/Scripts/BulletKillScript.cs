@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class BulletKillScript : MonoBehaviour {
 
-
+    int timesHit;
+    bool death;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Bullet")
         {
-            Destroy(gameObject);
+            timesHit = timesHit + 1;
             Destroy(other.gameObject);
-            PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 1);
         }
     }
 
-    private void FixedUpdate()
+
+    private void Update()
     {
-        //RaycastHit hit;
-        //Physics.Raycast(transform.position, transform.forward * 10f, out hit);
-        //Debug.DrawRay(transform.position, transform.forward * 0.25f, Color.red);
-        //if (hit.collider.tag == "Enemy")
-        //{
-        //    Destroy(gameObject);
-        //    print("enemy geraakt");
-        //}
+        print(timesHit);
+        if(timesHit >= 3)
+        {
+            Destroy(gameObject);
+            PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 1);
+        }
     }
 }
