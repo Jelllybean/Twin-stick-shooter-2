@@ -105,7 +105,7 @@ public class PauseManager : MonoBehaviour
         PauseScreen.SetActive(false);
         for (int i = 0; i < m_NavMeshes.Count; i++)
         {
-            m_NavMeshes[i].speed = 3.5f;
+            m_NavMeshes[i].speed = 2f;
         }
         for (int r = 0; r < m_Rigidbodies.Count; r++)
         {
