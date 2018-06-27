@@ -10,6 +10,9 @@ TagManager:
   - Armor
   - KeyCardLift
   - EnemyBullet
+  - PistolAmmo
+  - MachineGunAmmo
+  - Bullet
   layers:
   - Default
   - TransparentFX

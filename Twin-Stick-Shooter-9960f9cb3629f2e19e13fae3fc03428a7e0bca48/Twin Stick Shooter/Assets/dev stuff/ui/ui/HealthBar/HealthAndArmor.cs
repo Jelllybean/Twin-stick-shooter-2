@@ -51,7 +51,6 @@ public class HealthAndArmor : MonoBehaviour
                 PlayerHit = true;
             }
         }
-
     }
     private void OnCollisionEnter(Collision other)
     {

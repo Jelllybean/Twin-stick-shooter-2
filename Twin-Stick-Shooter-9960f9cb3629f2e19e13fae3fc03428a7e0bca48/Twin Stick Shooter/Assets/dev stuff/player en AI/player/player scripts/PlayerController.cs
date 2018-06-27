@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     private AudioSource m_MachineGunCocking;
 
+    [SerializeField]
+    private GameObject PistolSprite;
+    [SerializeField]
+    private GameObject MachineGunSprite;
+
     int PistolAmmo;
     int MachineGunAmmo;
     int PistolAmmoReserve;
@@ -142,12 +147,12 @@ public class PlayerController : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "PistolAmmo")
+        if (other.gameObject.tag == "PistolAmmo")
         {
             PistolAmmoReserve += 12;
             Destroy(other.gameObject);
         }
-        if (other.gameObject.name == "MachineGunAmmo")
+        if (other.gameObject.tag == "MachineGunAmmo")
         {
             MachineGunReserve += 30;
             Destroy(other.gameObject);
@@ -165,7 +170,9 @@ public class PlayerController : MonoBehaviour {
     }
     public void Pistol()
     {
-        PistolAmmoCount.text = "Pistol: " + PistolAmmo + " / " + PistolAmmoReserve;
+        PistolSprite.SetActive(true);
+        MachineGunSprite.SetActive(false);
+        PistolAmmoCount.text =  PistolAmmo + " / " + PistolAmmoReserve;
         if (Input.GetKeyDown(KeyCode.R) && PistolAmmoReserve >= 0)
         {
             PistolAmmo = 12;
@@ -185,8 +192,9 @@ public class PlayerController : MonoBehaviour {
     }
     public void SubMachineGun()
     {
-        print(MachineGunReserve);
-        PistolAmmoCount.text = "Machine gun: " + MachineGunAmmo + " / " + MachineGunReserve;
+        PistolSprite.SetActive(false);
+        MachineGunSprite.SetActive(true);
+        PistolAmmoCount.text = "         " + MachineGunAmmo + " / " + MachineGunReserve;
         if (Input.GetKeyDown(KeyCode.R))
         {
             if(MachineGunReserve <= 0)

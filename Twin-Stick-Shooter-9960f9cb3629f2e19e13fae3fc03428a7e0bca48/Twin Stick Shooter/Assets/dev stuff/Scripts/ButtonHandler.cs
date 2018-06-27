@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;   
 
 public class ButtonHandler : MonoBehaviour {
+   
+
 
     [SerializeField]
     private string SceneToBeLoaded;
@@ -72,4 +74,6 @@ public class ButtonHandler : MonoBehaviour {
         CameraAnimator.SetBool("GoToCredits", false);
         CameraAnimator.SetBool("GoToMenu", false);
     }
+
+    
 }

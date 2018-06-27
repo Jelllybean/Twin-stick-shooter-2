@@ -7,26 +7,17 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     public static PauseManager Instance;
-
     public bool IsPaused;
-
-    private int levelToLoad; 
-
-    public Animator animations;
 
     [SerializeField]
     private GameObject PauseScreen;
-
     private List<ParticleSystem> m_ParticleSystems;
     [SerializeField]
     private List<Rigidbody> m_Rigidbodies;
-
     [SerializeField]
     private List<NavMeshAgent> m_NavMeshes;
-
     [SerializeField]
     private List<WalkerScript> m_Walkers;
-
     private List<RigidbodyData> m_RigidbodyData;
 
     private void Awake()
@@ -62,12 +53,10 @@ public class PauseManager : MonoBehaviour
         {
             IsPaused = !IsPaused;
         }
-
         if (IsPaused == true)
         {
             Pause();
         }
-
         if (IsPaused == false)
         {
             Resume();
@@ -81,7 +70,6 @@ public class PauseManager : MonoBehaviour
         {
             m_NavMeshes[i].speed = 0;
         }
-
         for (int r = 0; r < m_Rigidbodies.Count; r++)
         {
             // Store backup data
@@ -103,7 +91,6 @@ public class PauseManager : MonoBehaviour
             m_Rigidbodies[r].isKinematic = true;
             m_Rigidbodies[r].Sleep();
         }
-
         for (int i = 0; i < m_Walkers.Count; i++)
         {
             m_Walkers[i].enabled = false;
@@ -115,10 +102,10 @@ public class PauseManager : MonoBehaviour
     public void Resume()
     {
         Cursor.visible = false;
-    
+        PauseScreen.SetActive(false);
         for (int i = 0; i < m_NavMeshes.Count; i++)
         {
-            m_NavMeshes[i].speed = 3.5f;
+            m_NavMeshes[i].speed = 2f;
         }
         for (int r = 0; r < m_Rigidbodies.Count; r++)
         {
@@ -149,36 +136,16 @@ public class PauseManager : MonoBehaviour
         public float Drag;
         public float AngularDrag;
     }
-
     public void ResumeButton()
     {
         IsPaused = !IsPaused;
     }
-
     public void LoadMainMenu()
     {
-        FadeToLevel(0);
-        
+        SceneManager.LoadScene("StartScreen (proto)");
     }
-
     public void QuitGame()
     {
         Application.Quit();
     }
-
-    public void FadeToLevel(int levelindex)
-    {
-        levelToLoad = levelindex;
-        animations.SetTrigger("FadeOut");
-        
-    }
-
-    public void OnFadeComplete()
-    {
-
-       
-;        SceneManager.LoadScene(levelToLoad);
-    }
-
-
 }

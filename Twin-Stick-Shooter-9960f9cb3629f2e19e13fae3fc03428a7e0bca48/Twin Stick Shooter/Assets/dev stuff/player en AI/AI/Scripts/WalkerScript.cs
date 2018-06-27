@@ -65,7 +65,6 @@ public class WalkerScript : MonoBehaviour
                 WalkerStart = true;
             }
         }
-        print(SpottedTimer);
         Vector3 targetDir = m_Target.position - transform.position;
 
         float angleToPlayer = (Vector3.Angle(targetDir, transform.forward));
